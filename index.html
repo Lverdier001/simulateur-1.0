@@ -1,0 +1,65 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulateur d'économies d'énergie Kocliko</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Simulateur d'économies d'énergie Kocliko</h1>
+        <form id="savingsForm">
+            <div class="form-group">
+                <label for="firstName">Prénom</label>
+                <input type="text" id="firstName" name="firstName" required>
+            </div>
+            <div class="form-group">
+                <label for="lastName">Nom</label>
+                <input type="text" id="lastName" name="lastName" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="etageType">Situation du logement</label>
+                <select id="etageType" name="etageType" required>
+                    <option value="">Selectionnez votre étage</option>
+                    <option value="ground">Rez-de-chaussée</option>
+                    <option value="first">Premier étage</option>
+                    <option value="top">Dernier étage</option>
+                    <option value="other">Autre étage</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="isolation">État de votre isolation</label>
+                <select id="isolation" name="isolation" required>
+                    <option value="">Selectionnez le type d'isolation</option>
+                    <option value="none">Pas ou peu d'isolation</option>
+                    <option value="old">Vieille isolation</option>
+                    <option value="correct">Isolation correcte</option>
+                    <option value="good">Isolation récente RT 2012 ou mieux</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="orientation">Orientation du logement</label>
+                <select id="orientation" name="orientation" required>
+                    <option value="">Selectionnez l'orientation</option>
+                    <option value="north">Nord</option>
+                    <option value="east">Est</option>
+                    <option value="west">Ouest</option>
+                    <option value="south">Sud</option>
+                </select>
+            </div>
+            <button type="submit">Calculer mes économies</button>
+        </form>
+        <div id="resultsContainer" class="hidden">
+            <h2>Estimation de vos économies</h2>
+            <p id="savingsResult"></p>
+            <p id="annualSavings"></p>
+            <p id="calculationBasis" class="calculation-basis"><i>Les économies sont calculées sur une base de 0,0725 € HT par kWh, pour une consommation annuelle de référence de 12 000 kWh.</i></p>
+        </div>
+    </div>
+    <script src="simulator.js"></script>
+</body>
+</html>
